@@ -1,0 +1,103 @@
+
+  /* Header.module.css */
+.header {
+    background: url('https://www.transparenttextures.com/patterns/wood-pattern.png'), #8B4513 ; /* Wooden texture */
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 60px;
+  }
+  
+  .navList {
+    list-style: none;
+    padding: 30;
+    font-size: 38px;
+    gap: 100px;
+    display: flex;
+    
+  }
+  
+  .navItem a {
+    text-decoration: none;
+    color: white; /* Warm beige */
+    font-weight: bold;
+    font-size: 32px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .navItem a:hover {
+    color: white; /* Sandy brown */
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #6b4226;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  
+  .searchBar label {
+    color: #ffebcd;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .searchInput {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    width: 350px;
+  }
+  
+  .searchInput::placeholder {
+    color: #a67c52;
+    font-style: italic;
+    
+  }
+  .active {
+    color: white; /* Sandy brown */
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .searchInput:focus {
+    border: 2px solid #d4a373;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navList {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .searchBar {
+      margin-top: 10px;
+    }
+  }
+  

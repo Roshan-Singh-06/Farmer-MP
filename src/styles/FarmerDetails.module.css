@@ -1,0 +1,25 @@
+/* FarmerDetails.module.css */
+.container {
+    text-align: center;
+    padding: 40px;
+    background: #fdf6ec; /* Soft warm background */
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #6b4226;
+    font-weight: bold;
+  }
+  
+  .image {
+    width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .details {
+    font-size: 18px;
+    color: #5d4037;
+    font-family: 'Georgia', serif;
+  }
+  
