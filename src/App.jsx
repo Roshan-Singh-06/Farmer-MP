@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -11,16 +10,26 @@ import CategoryDetails from "./components/CategoriesDetails";
 import Login from "./components/Login"; // ✅ Import Login component
 
 import "./styles/App.css";
+import Navbar1 from "./components/Navbar1";
+import SellerNavbar from "./components/SellerNavbar";
+import Register from "./components/Register";
+import StartSelling from "./components/StartSelling";
+import SellerPage from "./components/SellerPage";
+import FarmerMarket from "./components/FarmerMarket";
+import SuccessStories from "./components/SuccessStories";
+import FarmerRegistration from "./components/Farmer.Registration";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Header />
       <Routes>
+        {/* Home Page */}
         <Route
           path="/"
           element={
             <>
+              <Header />
               <Categories />
               <ImageSlider />
               <TextComponent />
@@ -28,10 +37,29 @@ function App() {
             </>
           }
         />
+        
+        {/* Category & Farmer Details */}
         <Route path="/category/:categoryId" element={<CategoryDetails />} />
         <Route path="/farmer/:id" element={<FarmerDetails />} />
-        <Route path="/profile" element={<Login />} />
+
+        {/* Login Page (Fixed) */}
+        <Route
+          path="/login"
+          element={
+            <>
+              <Navbar1/>
+              <Login />
+            </>
+          }
+        />
+
+<Route path="/Seller" element={<><SellerNavbar /><SellerPage /><SuccessStories/></>} />
+<Route path="/sell/register" element={<Register />} />
+<Route path="/Start-Selling" element={<><SellerNavbar/><StartSelling/></>} />
+<Route path="//dashboard" element={<><SellerNavbar/><FarmerRegistration/></>} />
+       
       </Routes>
+      <Footer/>
     </>
   );
 }

@@ -1,0 +1,79 @@
+.header {
+    background: url('https://www.transparenttextures.com/patterns/wood-pattern.png'), #8B4513;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .navList {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+  }
+  
+  .navItem {
+    color: white;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: color 0.3s, background 0.3s;
+    position: relative;
+  }
+  
+  .navItem:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Dropdown Styling */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #6b4226;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    padding: 10px;
+  }
+  
+  .dropdown p {
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dropdown p:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navList {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .dropdown {
+      position: static;
+    }
+  }
+  

@@ -1,83 +1,129 @@
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [formData, setFormData] = useState({
-    username: "",
-    number: "",
-    email: "",
-    password: "",
-  });
+  const [contact, setContact] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [error, setError] = useState("");
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [signupError, setSignupError] = useState({ phone: "", email: "" });
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const isValidPhone = (input) => /^[6-9]\d{9}$/.test(input);
+  const isValidEmail = (input) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input);
+
+  const handleContactChange = (e) => {
+    setContact(e.target.value);
+    setError("");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`${isSignUp ? "Sign Up" : "Login"} Data:`, formData);
+  const requestOtp = () => {
+    if (isValidPhone(contact) || isValidEmail(contact)) {
+      setOtpSent(true);
+      setError("");
+    } else {
+      setError("Invalid Phone Number or Email");
+    }
+  };
+
+  const verifyOtp = () => {
+    if (otp.length === 6) {
+      navigate("/"); // Redirecting to home page
+    }
+  };
+
+  const handleSignUp = () => {
+    let errors = {};
+    if (!isValidPhone(phone)) errors.phone = "Invalid Phone Number";
+    if (!isValidEmail(email)) errors.email = "Invalid Email Address";
+    
+    if (Object.keys(errors).length > 0) {
+      setSignupError(errors);
+    } else {
+      alert("Successfully Signed Up!");
+      navigate("/"); // Redirecting to home page
+    }
   };
 
   return (
     <div className={styles.loginContainer}>
-      {/* Left Section */}
       <div className={styles.leftSection}>
         <h2 className={styles.welcomeText}>Welcome to Farmer's Market</h2>
-        <p>Join the revolution in agriculture & connect with customers directly.</p>
+        <p className={styles.pText}>Join the revolution in agriculture & connect with customers directly.</p>
       </div>
 
-      {/* Right Section - Form */}
       <div className={styles.rightSection}>
         <h2 className={styles.title}>{isSignUp ? "Sign Up" : "Login"}</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          {isSignUp && (
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={formData.username}
-              onChange={handleChange}
-              className={styles.inputField}
-              required
-            />
+        
+        <div className={styles.form}>
+          {isSignUp ? (
+            <>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className={styles.inputField}
+                required
+              />
+              {signupError.phone && <p className={styles.errorText}>{signupError.phone}</p>}
+              <input
+                type="text"
+                placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className={styles.inputField}
+                required
+              />
+              {signupError.email && <p className={styles.errorText}>{signupError.email}</p>}
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={styles.inputField}
+                required
+              />
+              <button onClick={handleSignUp} className={styles.submitButton}>Sign Up</button>
+            </>
+          ) : (
+            <>
+              {error && <p className={styles.errorText}>{error}</p>}
+              <input
+                type="text"
+                placeholder="Enter Email or Phone Number"
+                value={contact}
+                onChange={handleContactChange}
+                className={styles.inputField}
+                required
+              />
+              {!otpSent ? (
+                <button onClick={requestOtp} className={styles.submitButton}>Request OTP</button>
+              ) : (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Enter OTP"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    className={styles.inputField}
+                    required
+                  />
+                  <button onClick={verifyOtp} className={styles.submitButton}>Verify OTP</button>
+                </>
+              )}
+            </>
           )}
-          <input
-            type="text"
-            name="number"
-            placeholder="Phone Number"
-            value={formData.number}
-            onChange={handleChange}
-            className={styles.inputField}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className={styles.inputField}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            className={styles.inputField}
-            required
-          />
-          <button type="submit" className={styles.submitButton}>
-            {isSignUp ? "Sign Up" : "Login"}
-          </button>
-        </form>
+        </div>
 
-        {/* Toggle between Login & Signup */}
         <p className={styles.toggleText}>
-          {isSignUp ? "Already have an account?" : "New to Website?"}{" "}
+          {isSignUp ? "Already have an account?" : "New to Website?"} 
           <span className={styles.toggleButton} onClick={() => setIsSignUp(!isSignUp)}>
             {isSignUp ? "Login" : "Create an Account"}
           </span>
@@ -88,4 +134,3 @@ const Login = () => {
 };
 
 export default Login;
-

@@ -1,0 +1,132 @@
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    max-height: 900px;
+    padding: 20px;
+    background: url("https://www.transparenttextures.com/patterns/wood-pattern.png"), #fffae5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Step Indicator */
+  .stepIndicator {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .step {
+    flex: 1;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 3px solid #ccc;
+    text-align: center;
+  }
+  
+  .active {
+    color: #6b4226;
+    border-bottom: 3px solid #8b4513;
+  }
+  
+  /* Step Box */
+  .stepBox {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-family: "Georgia", serif;
+    color: #6b4226;
+  }
+  
+  /* Input Fields */
+  input {
+    padding: 10px;
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    background: #fffae5;
+    margin-top: 10px;
+  }
+  
+  .otpButton,
+  .verifyButton,
+  .nextButton {
+    margin-top: 100px;
+    padding: 12px;
+    background: #6b4226;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .otpButton:hover,
+  .verifyButton:hover,
+  .nextButton:hover {
+    background: #8b4513;
+    transform: scale(1.05);
+  }
+  
+  /* Options Styling */
+  .optionButton {
+    background: #d4a373;
+    color: white;
+    padding: 10px;
+    margin: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .optionButton:hover {
+    background: #8b4513;
+  }
+  
+  .terms {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Forgot Password */
+  .forgotPassword {
+    color: #8b4513;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .forgotPassword:hover {
+    color: #6b4226;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  .passwordContainer {
+    position: relative;
+    width: 100%;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding-right: 40px;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
