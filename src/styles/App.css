@@ -10,7 +10,26 @@
     background-color: #f4e1d2;
     
   }
-  
+  ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: url('/images/wood-texture.jpg'); /* Add a wood or soil texture */
+    background-size: cover;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a0522d;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #4CAF50, #2E7D32);
+}
+
   /* Header Styles */
   header {
     background-color: #2d572c;
