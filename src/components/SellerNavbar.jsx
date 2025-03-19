@@ -18,7 +18,7 @@ const SellerNavbar = () => {
             Sell Online ▼
             {dropdown === "sell" && (
               <div className={styles.dropdown}>
-                <p onClick={() => navigate("/sell/register")}>Create Register</p>
+                
                 <p onClick={() => navigate("/sell/addpic")}>Add Pic</p>
                 <p onClick={() => navigate("/sell/other")}>Other Details</p>
               </div>
@@ -49,7 +49,7 @@ const SellerNavbar = () => {
               <div className={styles.dropdown}>
                 <p onClick={() => navigate("/learn/guides")}>Guides</p>
                 <p onClick={() => navigate("/learn/videos")}>Videos</p>
-                <p onClick={() => navigate("/learn/success-stories")}>Success Stories</p>
+                
               </div>
             )}
           </li>

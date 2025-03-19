@@ -19,17 +19,6 @@ h1, h2, h3 {
   text-align: center;
 }
 
-button {
-  background-color: #6b4226; /* Rich, earthy brown */
-  color: #fff8e1; /* Soft warm white */
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
 button:hover {
   background-color: #a67c52; /* Lighter brown for trust */

@@ -17,8 +17,8 @@ const Header = () => {
           <li className={`${styles.navItem} ${isActive("/")}`} onClick={() => navigate("/")}>
             Home
           </li>
-          <li className={`${styles.navItem} ${isActive("/profile")}`} onClick={() => navigate("/profile")}>
-            Profile
+          <li className={`${styles.navItem} ${isActive("/Login")}`} onClick={() => navigate("/Login")}>
+            Login
           </li>
           <li className={`${styles.navItem} ${isActive("/about")}`} onClick={() => navigate("/about")}>
             About Us

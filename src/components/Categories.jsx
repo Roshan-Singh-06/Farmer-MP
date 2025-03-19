@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import styles from "../styles/Categories.module.css";
 
 const categories = [
-  { id: "organic-food", name: "Organic Food", src: "/images/1.jpg" },
-  { id: "best-offer", name: "Best Offer", src: "/images/2.jpg" },
-  { id: "nutrients", name: "Nutrients", src: "/images/4.jpg" },
+  { id: "organic-food", name: "Organic Food", src: "/images/D1.jpg" },
+  { id: "best-offer", name: "Best Offer", src: "/images/Nutrition.jpg" },
+  { id: "nutrients", name: "Nutrients", src: "/images/Dal.jpg" },
 
-  { id: "pulses", name: "Pulses", src: "/images/1.jpg" },
-  { id: "wheat", name: "Wheat", src: "/images/2.jpg" },
-  { id: "rice", name: "Rice", src: "/images/3.jpg" }
+  { id: "pulses", name: "Pulses", src: "/images/chana.jpg" },
+  { id: "wheat", name: "Wheat", src: "/images/Breakfast.jpg" },
+  { id: "rice", name: "Rice", src: "/images/Raw.jpg" }
 ];
 
 const Categories = () => {

@@ -19,12 +19,14 @@ const ImageSlider = () => {
 
   return (
     <div className={styles.slider}>
-      <button className={styles.prev} onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)}>&#10094;</button>
+           <button className={styles.prev} onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)}>&#10094;</button>
       <img src={images[currentIndex].src} alt={images[currentIndex].alt} className={styles.image} />
+
       <button className={styles.next} onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}>&#10095;</button>
     </div>
   );
 };
 
 export default ImageSlider;
+
 

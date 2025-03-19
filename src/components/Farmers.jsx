@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import styles from "../styles/Farmers.module.css";
 
 const farmersData = [
-  { id: 1, name: "Rajesh Kumar", src: "/images/1.jpg" },
-  { id: 2, name: "Suresh Patil", src: "/images/2.jpg" },
-  { id: 3, name: "Amit Sharma", src: "/images/3.jpg" },
+  { id: 1, name: "Rajesh Kumar", src: "/images/Fm7.jpg" },
+  { id: 2, name: "Suresh Patil", src: "/images/Fm4.jpg" },
+  { id: 3, name: "Amit Sharma", src: "/images/Fm5.jpg" },
 ];
 
 const Farmers = () => {

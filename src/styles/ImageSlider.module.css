@@ -1,49 +1,50 @@
 /* ImageSlider.module.css */
 .slider {
-    margin-top: 40px;
-    margin-left: 60px;
-    position: relative;
-    max-width: 1400px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    background-color:  #fdf6ec;
-    
-  }
+  margin-top: 40px;
+  margin-left: 60px;
+  position: relative;
+  max-width: 1400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background-color:  #fdf6ec;
   
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-    transition: opacity 1s ease-in-out;
-  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   
-  button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(139, 69, 19, 0.7); /* Rustic Brown */
-    color: #fff8e1; /* Warm Cream */
-    border: none;
-    padding: 10px 15px;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    background: rgba(205, 133, 63, 0.9); /* Softer Sand Brown */
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
+  transition: opacity 1s ease-in-out;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(139, 69, 19, 0.7); /* Rustic Brown */
+  /* color: #fff8e1; /* Warm Cream */
+  /* border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+ } 
+
+button:hover {
+  background: rgba(205, 133, 63, 0.9); /* Softer Sand Brown */
+}
+
+.prev {
+  left: 10px;
+  color: #fdf6ec;
+}
+
+.next {
+  right: 10px;
+  color: #fdf6ec;
+}
